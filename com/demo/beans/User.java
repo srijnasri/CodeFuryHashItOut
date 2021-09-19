@@ -4,55 +4,42 @@ import java.util.Date;
 
 public class User 
 {
-private String name;
-private String userID;
 private String username;
+private int userid;
+private String name;
 private String password;
-private int phoneNumber;
-private String email;
-private Date dateOfBirth;
-private int walletAmount;
+private String phoneno;
+private String emailid;
+private Date dob;
+private double walletamount;
 private String typeOfUser;
 private String address;
 public User() {
 	super();
-	this.name = null;
-	this.userID = null;
 	this.username = null;
+	this.userid = 0;
+	this.name = null;
 	this.password = null;
-	this.phoneNumber = 0;
-	this.email = email;
-	this.dateOfBirth = null;
-	this.walletAmount = 0;
+	this.phoneno = null;
+	this.emailid = null;
+	this.dob = null;
+	this.walletamount = 0.0;
 	this.typeOfUser = null;
 	this.address = null;
-	
 }
-public User(String name, String userID, String username, String password, int phoneNumber, String email,
-		Date dateOfBirth, int walletAmount, String typeOfUser, String address) {
+public User(String username, int userid, String name, String password, String phoneno, String emailid, Date dob,
+		double walletamount, String typeOfUser, String address) {
 	super();
-	this.name = name;
-	this.userID = userID;
 	this.username = username;
+	this.userid = userid;
+	this.name = name;
 	this.password = password;
-	this.phoneNumber = phoneNumber;
-	this.email = email;
-	this.dateOfBirth = dateOfBirth;
-	this.walletAmount = walletAmount;
+	this.phoneno = phoneno;
+	this.emailid = emailid;
+	this.dob = dob;
+	this.walletamount = walletamount;
 	this.typeOfUser = typeOfUser;
 	this.address = address;
-}
-public String getName() {
-	return name;
-}
-public void setName(String name) {
-	this.name = name;
-}
-public String getUserID() {
-	return userID;
-}
-public void setUserID(String userID) {
-	this.userID = userID;
 }
 public String getUsername() {
 	return username;
@@ -60,35 +47,47 @@ public String getUsername() {
 public void setUsername(String username) {
 	this.username = username;
 }
+public int getUserid() {
+	return userid;
+}
+public void setUserid(int userid) {
+	this.userid = userid;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
 public String getPassword() {
 	return password;
 }
 public void setPassword(String password) {
 	this.password = password;
 }
-public int getPhoneNumber() {
-	return phoneNumber;
+public String getPhoneno() {
+	return phoneno;
 }
-public void setPhoneNumber(int phoneNumber) {
-	this.phoneNumber = phoneNumber;
+public void setPhoneno(String phoneno) {
+	this.phoneno = phoneno;
 }
-public String getEmail() {
-	return email;
+public String getEmailid() {
+	return emailid;
 }
-public void setEmail(String email) {
-	this.email = email;
+public void setEmailid(String emailid) {
+	this.emailid = emailid;
 }
-public Date getDateOfBirth() {
-	return dateOfBirth;
+public Date getDob() {
+	return dob;
 }
-public void setDateOfBirth(Date dateOfBirth) {
-	this.dateOfBirth = dateOfBirth;
+public void setDob(Date dob) {
+	this.dob = dob;
 }
-public int getWalletAmount() {
-	return walletAmount;
+public double getWalletamount() {
+	return walletamount;
 }
-public void setWalletAmount(int walletAmount) {
-	this.walletAmount = walletAmount;
+public void setWalletamount(double walletamount) {
+	this.walletamount = walletamount;
 }
 public String getTypeOfUser() {
 	return typeOfUser;
@@ -102,14 +101,10 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
-
 @Override
 public String toString() {
-	return "User [name=" + name + ", userID=" + userID + ", username=" + username + ", password=" + password
-			+ ", phoneNumber=" + phoneNumber + ", email=" + email + ", dateOfBirth=" + dateOfBirth + ", walletAmount="
-			+ walletAmount + ", typeOfUser=" + typeOfUser + ", address=" + address + "]";
+	return "User [username=" + username + ", userid=" + userid + ", name=" + name + ", password=" + password
+			+ ", phoneno=" + phoneno + ", emailid=" + emailid + ", dob=" + dob + ", walletamount=" + walletamount
+			+ ", typeOfUser=" + typeOfUser + ", address=" + address + "]";
 }
-
-
-
 }
