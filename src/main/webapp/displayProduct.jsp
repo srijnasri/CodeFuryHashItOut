@@ -9,7 +9,7 @@
 </head>
 <body>
 <table border = "2">
-<tr><th>Product Id</th><th>Product Name</th><th>Product Price</th><th>Product Quantity</th><th>Seller ID</th><th>Category ID</th><th>Description</th><th>Image</th></tr>
+<tr><th>Product ID</th><th>Name</th><th>Actual Price</th><th>Product Quantity</th><th>Category ID</th><th>Description</th><th>Image</th></tr>
   
   <%
      List<Product> plist = (List<Product>)request.getAttribute("plist");
@@ -22,7 +22,6 @@
     <td><%=p.getName() %></td>
     <td><%=p.getActualPrice() %></td>
     <td><%=p.getQuantity() %></td>
-    <td><%=p.getSellerID() %></td>
     <td><%=p.getCid() %></td>
     <td><%=p.getDescription() %></td>
     <th><%=p.getImage() %></th>

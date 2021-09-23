@@ -7,28 +7,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.demo.beans.Product;
+import com.demo.dao.CategoryDao;
+import com.demo.dao.CategoryDaoImpl;
 import com.demo.service.ProductService;
 import com.demo.service.ProductServiceImpl;
 
 @WebServlet("/addProduct")
 public class AddProductServlet extends HttpServlet 
 {
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 {
-		int pid=Integer.parseInt(request.getParameter("pid"));
+	    String cname =request.getParameter("cname");
+		//System.out.println(cname);
+		CategoryDao cservice=new CategoryDaoImpl();
+		int categoryID=cservice.selectId(cname);
 		String name=request.getParameter("name");
-		int quantity=Integer.parseInt(request.getParameter("quantity"));
-		int sellerid=Integer.parseInt(request.getParameter("sellerid"));
-		int cid =Integer.parseInt(request.getParameter("cid"));
-		
-		double price=Double.parseDouble(request.getParameter("actualPrice"));
 		String description=request.getParameter("description");
-		Product p=new Product(pid,name,cid,description,price,quantity,"gg",sellerid);
+		double price=Double.parseDouble(request.getParameter("actualPrice"));
+		int quantity=Integer.parseInt(request.getParameter("quantity"));
+		Product p=new Product(name,categoryID,description,price,quantity,"gg");
 		ProductService pservice=new ProductServiceImpl();
 		pservice.addProduct(p);
+		//System.out.println(name);
 		RequestDispatcher rd1=request.getRequestDispatcher("displayProduct");
-		rd1.forward(request, response);
+		rd1.forward(request, response);	
 }
 }

@@ -10,15 +10,14 @@ private String description;
 private double actualPrice;
 private int quantity;
 private String image;
-private int sellerid;
 
 public Product() {
 	super();
 	
 }
 
-public Product(int pid, String name, int cid, String description, double actualPrice, int quantity, String image,
-		int sellerid) {
+public Product(int pid, String name, int cid, String description, double actualPrice, int quantity, String image)
+{
 	super();
 	this.pid = pid;
 	this.name = name;
@@ -27,7 +26,16 @@ public Product(int pid, String name, int cid, String description, double actualP
 	this.actualPrice = actualPrice;
 	this.quantity = quantity;
 	this.image = image;
-	this.sellerid = sellerid;
+}
+
+public Product(String name, int cid, String description, double actualPrice, int quantity, String image) {
+	super();
+	this.name = name;
+	this.cid = cid;
+	this.description = description;
+	this.actualPrice = actualPrice;
+	this.quantity = quantity;
+	this.image = image;
 }
 
 public int getPid() {
@@ -47,12 +55,6 @@ public int getQuantity() {
 }
 public void setQuantity(int quantity) {
 	this.quantity = quantity;
-}
-public int getSellerID() {
-	return sellerid;
-}
-public void setSellerID(int sellerID) {
-	this.sellerid = sellerID;
 }
 public int getCid() {
 	return cid;
@@ -81,7 +83,7 @@ public void setImage(String image) {
 
 @Override
 public String toString() {
-	return "Product [pid=" + pid + ", name=" + name + ", quantity=" + quantity + ", sellerID=" + sellerid + ", cid="
+	return "Product [pid=" + pid + ", name=" + name + ", quantity=" + quantity +  ", cid="
 			+ cid + ", actualPrice=" + actualPrice + ", description=" + description + ", image=" + image + "]";
 }
 

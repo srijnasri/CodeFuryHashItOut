@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import com.demo.beans.Product;
@@ -17,7 +18,7 @@ public class ProductDaoImpl implements ProductDao
     	try
     	{	
 			pgetAllProd=con.prepareStatement("select * from Product");
-			inspr=con.prepareStatement("insert into Product values(?,?,?,?,?,?,?,?)");
+			inspr=con.prepareStatement("insert into Product values(?,?,?,?,?,?,?)");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -30,7 +31,7 @@ public class ProductDaoImpl implements ProductDao
 			ResultSet rs=pgetAllProd.executeQuery();
 			while(rs.next())
 			{
-				plist.add(new Product(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getDouble(5),rs.getInt(6),rs.getString(7),rs.getInt(8)));
+				plist.add(new Product(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getDouble(5),rs.getInt(6),rs.getString(7)));
 			}
 			return plist;
 		} catch (SQLException e) 
@@ -43,14 +44,13 @@ public class ProductDaoImpl implements ProductDao
 	public void save(Product p)
 	{
 		try {
-			 inspr.setInt(1,p.getPid() );
+			 inspr.setNull(1,Types.INTEGER);
 			 inspr.setString(2, p.getName());
 			 inspr.setInt(3, p.getCid());
 			 inspr.setString(4, p.getDescription());
 			 inspr.setDouble(5, p.getActualPrice());
 			 inspr.setInt(6, p.getQuantity());
 			 inspr.setString(7,p.getImage());
-			 inspr.setInt(8, p.getSellerID()); 
 			
 			 int num=inspr.executeUpdate();
 			 

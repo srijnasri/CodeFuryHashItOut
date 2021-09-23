@@ -11,36 +11,41 @@ public Category()
 	this.cid = 0;
 	this.name = null;
 	this.description = null;
-	
 }
-public Category(String categoryID, String name, String description) {
+public Category(String categoryID, String name, String description) 
+{
 	super();
 	this.cid = cid;
 	name = name;
 	this.description = description;
 }
-
-public int getCategoryID() {
+public int getCategoryID() 
+{
 	return cid;
 }
-public void setCategoryID(int categoryID) {
+public void setCategoryID(int categoryID)
+{
 	this.cid = cid;
 }
-public String getName() {
+public String getName()
+{
 	return name;
 }
-public void setName(String name) {
+public void setName(String name) 
+{
 	name = name;
 }
-public String getDescription() {
+public String getDescription()
+{
 	return description;
 }
-public void setDescription(String description) {
+public void setDescription(String description)
+{
 	this.description = description;
 }
 @Override
-public String toString() {
+public String toString() 
+{
 	return "Category [categoryID=" + cid + ", Name=" + name + ", description=" + description + "]";
 }
-
 }

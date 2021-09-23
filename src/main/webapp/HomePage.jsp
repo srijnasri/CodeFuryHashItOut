@@ -2,9 +2,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
 <link rel="stylesheet" href="css/HomeCSS.css"></link>
-
 </head>
 <body>
 <div class="navbar">

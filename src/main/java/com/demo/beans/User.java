@@ -44,6 +44,20 @@ public User(int userid, String name, Date dob, String emailid, String phoneno, S
 	this.typeOfUser = typeOfUser;
 }
 
+public User(String name, Date dob, String emailid, String phoneno, String username, String password, String address,
+		double walletamount, String typeOfUser) {
+	super();
+	this.name = name;
+	this.dob = dob;
+	this.emailid = emailid;
+	this.phoneno = phoneno;
+	this.username = username;
+	this.password = password;
+	this.address = address;
+	this.walletamount = walletamount;
+	this.typeOfUser = typeOfUser;
+}
+
 public int getUserid() {
 	return userid;
 }

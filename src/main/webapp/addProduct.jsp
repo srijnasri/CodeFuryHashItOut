@@ -11,19 +11,20 @@ function validateData()
 	return true;
 }
 </script>
-</head> 
+</head>  
 <body>
 <form action="addProduct" method="get" onsubmit="return validateData()">
-Product id <input type="text" name="pid" >
 Product Name <input type="text" name="name" >
-Quantity <input type="text" name="quantity" >
-Seller id <input type="text" name="sellerid" >
-Category id <input type="text" name="cid">
-Product Price <input type="text" name="actualPrice" >
+<label>Category</label>
+<select name="cname">
+<option value="others">Others</option>
+<option value="furniture">Furniture</option>
+</select>
 Description <input type="text" name="description" >
-
-
-<button type="submit" name="btn">Add Product</button>
+Actual Price <input type="text" name="actualPrice" >
+Quantity <input type="text" name="quantity" >
+Image <input type="text" name="image" >
+<button type="submit" name="btn" onclick="getData()">Add Product</button>
 </form>
 </body>
 </html>

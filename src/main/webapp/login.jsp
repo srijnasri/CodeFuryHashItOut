@@ -1,6 +1,5 @@
 <html>
 <head>
-
 <title> Login Page </title>
 <link rel="stylesheet" href="css/LoginCSS.css"></link>
 <script >
