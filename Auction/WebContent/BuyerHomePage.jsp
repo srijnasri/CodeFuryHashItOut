@@ -88,13 +88,12 @@
 <%
 	List<Product> plist=(List<Product>)request.getAttribute("plist");
 	List<List<String>> alist=(List<List<String>>)request.getAttribute("alist");
-	int size=alist.size();
 	String buyerid="2";
 	int s=1;
 	
 %>
 <p>  ${message}</p>
-<c: remove var="message" scope="session"/>
+
 	<div class="row">
 	<div class="column">
 		<h2>Bought Products</h2>
@@ -137,7 +136,7 @@
 				<tr>
 					<td><%=s++ %></td>
 					<td><%=a.get(1)%></td>
-					<td><%=a.get(2)%></td>
+					<td><img src="images/<%=a.get(2)%>" width="120px" height="120px"></td>
 					<td><%=a.get(3)%></td>
 					<td><%=a.get(4)%></td>
 					<td><%=a.get(5)%></td>
