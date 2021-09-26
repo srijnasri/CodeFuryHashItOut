@@ -16,7 +16,12 @@ public class AuctionStarter implements Runnable {
         	PreparedStatement getProducts = con.prepareStatement(getAllProducts);
         	getProducts.setString(1,"Open");
         	getProducts.setString(2,"New");
-        	getProducts.executeUpdate();
+        	int i = getProducts.executeUpdate();
+             if(i>0) {
+             	con.commit();
+                 System.out.println("Update succeded!");
+             }
+        	
         }
         catch(SQLException e) {
             e.printStackTrace();
