@@ -13,7 +13,7 @@
 			<li><a href="About.jsp">About Us</a></li>
 			<li><a href="Register.jsp">Register</a></li>
 			<li><a href="login.jsp">Login</a></li>
-			<li><a class="account1" href="SignOut.jsp">Log Out</a></li>
+			<!-- li><a class="account1" href="SignOut.jsp">Log Out</a></li>-->
 			<li><a class="account" href="MyAccount.jsp">My Account</a></li>
 		</ul>
 	</div>
