@@ -19,7 +19,11 @@ public class AuctionStarter implements Runnable {
         	int i = getProducts.executeUpdate();
              if(i>0) {
              	con.commit();
-                 System.out.println("Update succeded!");
+                 System.out.println("Update succeded :)");
+             }
+             else
+             {
+            	 System.out.println("Update failed :(");
              }
         	
         }
