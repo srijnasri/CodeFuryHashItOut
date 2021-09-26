@@ -13,7 +13,7 @@ public class DBUtil {
 		try {
 		if(con==null) {
 			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineauctiondb","root","rainberry222");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/onlineauctiondb","root","root");
 			con.setAutoCommit(false);
 		}	
 		} catch (SQLException e) {
