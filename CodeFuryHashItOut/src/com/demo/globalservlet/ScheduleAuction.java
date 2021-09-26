@@ -91,8 +91,16 @@ public class ScheduleAuction extends HttpServlet {
 						pst1.setDate(3, sDate);
 						pst1.setDate(4, eDate);
 						pst1.setInt(5, pid);
-						pst1.executeUpdate();
-
+						int i = pst1.executeUpdate();
+						if(i>0)
+						{
+							conn.commit();
+							System.out.println("Update Succeded :)");
+						}
+						else
+						{
+							System.out.println("Update Failed :(");
+						}
 						request.setAttribute("userid", userid);
 						RequestDispatcher rd = request.getRequestDispatcher("/displayProduct");
 						rd.forward(request, response);
